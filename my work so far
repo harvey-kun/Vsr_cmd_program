@@ -1,0 +1,41 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+//IntroFit Assistant (A C++ Fitness Assistant)
+
+
+void menu(){
+    cout << "============================================================" << endl; //60 =
+    cout << setw(38) << "IntroFit Assistant" << endl;
+    cout << "============================================================" << "\n" << "\n";
+}
+
+void menu_1(){
+    cout << setw(20) << "[1]" << "  Create User" << endl;
+    cout << setw(20) << "[2]" << "  Log in" << endl;
+    cout << setw(20) << "[3]" << "  Exit" << endl;
+}
+
+int main(){
+    auto usr_choice = 0;
+
+ do {
+        menu();
+        menu_1();
+
+        cout << "Enter choice: ";
+        cin >> usr_choice;
+
+
+
+        if (usr_choice < 1 || usr_choice > 3) {
+            usr_choice = 0;
+            system("clear");
+        }
+
+
+    } while (usr_choice < 1 || usr_choice > 3);
+
+
+    return 0;
+}
