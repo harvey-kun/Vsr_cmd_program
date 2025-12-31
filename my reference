@@ -8,6 +8,7 @@ string ownerCreds[2] = {"admin", "admin"};
 
 
     //Variables
+
 bool firstLogin = 1;
 //End for "GLOBAL"
 
@@ -20,7 +21,8 @@ void clearInput(){
 
 
 //CLI Title
-void header(const string title) {
+void header(string title) {
+
     cout << "============================================================\n";
     cout << setw(47) << title << endl;
     cout << "============================================================\n\n";
@@ -159,7 +161,8 @@ int main() {
         }
         else if (choice == 3){
             system("clear");
-            cout << "Exiting...\n";
+            header("VEHICLE SERVICE RESERVATION SYSTEM");
+            cout << "Ending Program...\n";
         }
     }
 
