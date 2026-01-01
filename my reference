@@ -6,8 +6,7 @@ using namespace std;
     //Arrays
 string ownerCreds[2] = {"admin", "admin"};
 string dates[7] = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
-bool isBusy[7] = {true,true,true,true,true,true,true};
-
+bool isBusy[7] = {false,false,false,false,false,false,false};
 
     //Variables
 
@@ -53,6 +52,52 @@ void ownerMenuUI(){
     cout << setw(26) <<"[2]  "<< "Set Working Days\n";
     cout << setw(26) <<"[3]  "<< "View Available Dates\n";
 }
+
+void makeReservation() {
+    int pick;
+
+    while (true) {
+        system("clear");
+        header("MAKE RESERVATION");
+        displayDates();
+
+        cout << "\nPick a date: ";
+        if (!(cin >> pick)) {
+            clearInput();
+            continue;
+        }
+
+        if (pick < 1 || pick > 7) {
+            system("clear");
+            cout << "Invalid choice.\n";
+            continue;
+        }
+
+        // If date is busy
+        if (isBusy[pick - 1]) {
+            system("clear");
+            header("MAKE RESERVATION");
+            displayDates();
+            cout << "\n" << dates[pick - 1]
+                 << " is not available please select another date.\n";
+            continue;
+        }
+
+        // Reserve date
+        isBusy[pick - 1] = true;
+
+        cout << "\nReservation successful!\n";
+        cout << "Scheduled on: " << dates[pick - 1] << endl;
+        cout << "Press enter to continue...";
+        cin.ignore();
+        cin.get();
+        break;
+    }
+}
+
+
+
+
 //CLI Sub choices 3
 void customerMenuUI() {
     cout << setw(26) <<"[1]  "<< "Return to Main Menu\n";
@@ -134,19 +179,18 @@ void customerMenu() {
 
         cout << "\nEnter choice: ";
 
-        //for invalid user input
-        if (!(cin >> choice)){
+        if (!(cin >> choice)) {
             clearInput();
             choice = 0;
         }
 
         if (choice == 2) {
-            cout << "\nMaking reservation...\n";
-            cout << "Enter 1 to return: ";
-            cin >> choice;
+            makeReservation();
+            choice = 0; // stay in customer menu
         }
     }
 }
+
 
 
 
