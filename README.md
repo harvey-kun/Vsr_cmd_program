@@ -38,7 +38,7 @@
  - Input validation to prevent infinite loops and crashes.
 
 
-## Note
+# Note
 This project is intended for learning and academic purposes, No external files or databases are used, Any data that's saved within the program reset when the program exits.
 
 
