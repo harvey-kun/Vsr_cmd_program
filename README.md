@@ -1,7 +1,7 @@
 # Features
 ## Customer Panel
 
-1. First list item
+View available service dates (Monday–Sunday).
    - First nested list item
      - Second nested list item
 
