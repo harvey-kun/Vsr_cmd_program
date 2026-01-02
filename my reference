@@ -22,7 +22,7 @@ void clearInput(){
 
 void displayDates() {
     cout << "Available dates are:\n";
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 7; i++) {
         cout << "[" << i + 1 << "] " << dates[i];
         if (isBusy[i]) {
             cout << "\tBusy";
@@ -38,7 +38,6 @@ void header(string title) {
     cout << setw(47) << title << endl;
     cout << "============================================================\n\n";
 }
-
 
 //CLI Sub choices 1
 void mainMenuUI(){
