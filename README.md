@@ -1,5 +1,12 @@
 # Features
 ## Customer Panel
+
+1. First list item
+   - First nested list item
+     - Second nested list item
+
+
+
 View available service dates (Monday–Sunday).
 Make a reservation for an available date.
 Enter customer information.
