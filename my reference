@@ -54,8 +54,9 @@ void ownerMenuUI(){
 
 void makeReservation() {
     int pick;
+    bool reserved = false;
 
-    while (true) {
+    while (!reserved) {
         system("clear");
         header("MAKE RESERVATION");
         displayDates();
@@ -63,37 +64,30 @@ void makeReservation() {
         cout << "\nPick a date: ";
         if (!(cin >> pick)) {
             clearInput();
-            continue;
-        }
-
-        if (pick < 1 || pick > 7) {
+            system("clear");
+            cout << "Invalid input.\n";
+        } else if (pick < 1 || pick > 7) {
             system("clear");
             cout << "Invalid choice.\n";
-            continue;
-        }
-
-        // If date is busy
-        if (isBusy[pick - 1]) {
+        } else if (isBusy[pick - 1]) {
             system("clear");
             header("MAKE RESERVATION");
             displayDates();
             cout << "\n" << dates[pick - 1]
                  << " is not available please select another date.\n";
-            continue;
+        } else {
+            // Reserve date
+            isBusy[pick - 1] = true;
+
+            cout << "\nReservation successful!\n";
+            cout << "Scheduled on: " << dates[pick - 1] << endl;
+            cout << "Press enter to continue...";
+            cin.ignore();
+            cin.get();
+            reserved = true;
         }
-
-        // Reserve date
-        isBusy[pick - 1] = true;
-
-        cout << "\nReservation successful!\n";
-        cout << "Scheduled on: " << dates[pick - 1] << endl;
-        cout << "Press enter to continue...";
-        cin.ignore();
-        cin.get();
-        break;
     }
 }
-
 
 
 
