@@ -1,19 +1,15 @@
 # Features
 ## Customer Panel
 
-View available service dates (Monday–Sunday).
-   - First nested list item
-     - Second nested list item
+   - View available service dates (Monday–Sunday).
+   - Make a reservation for an available date.
+   - Enter customer information.
 
-
-
-View available service dates (Monday–Sunday).
-Make a reservation for an available date.
-Enter customer information.
-Select:
-  -Vehicle category (Private, Public Transport, Commercial).
-  -Specific vehicle type (e.g., Sedan, Jeepney, Truck).
-  -Problem category (Engine, Electrical, Safety, etc.).
+ - Select:
+     - Vehicle category (Private, Public Transport, Commercial).
+     - Specific vehicle type (e.g., Sedan, Jeepney, Truck).
+     - Problem category (Engine, Electrical, Safety, etc.).
+ 
 Prevents double-booking of dates
 Handles invalid input safely
 
