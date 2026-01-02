@@ -32,10 +32,10 @@
      - Customer details.
      - Vehicle information
 
-   - Implements menu loops to prevent crashes from invalid input.
-   - Clear CLI layout using iomanip for alignment.
-   - Modular function-based structure for readability and maintenance.
-   - Input validation to prevent infinite loops and crashes.
+ - Implements menu loops to prevent crashes from invalid input.
+ - Clear CLI layout using iomanip for alignment.
+ - Modular function-based structure for readability and maintenance.
+ - Input validation to prevent infinite loops and crashes.
 
 
 
