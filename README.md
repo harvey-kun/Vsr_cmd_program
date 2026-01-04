@@ -47,8 +47,8 @@
     <td>Customer CLI:</td>
   </tr>
   <tr>
-    <td><img src="Screenshot/1.png" alt="Nothing" width="35%" length="35%"></td>
-    <td><img src="Screenshot/2.png" alt="Nothing" width="35%" length="35%"></td>
+    <td><img src="Screenshot/1.png"></td>
+    <td><img src="Screenshot/2.png"></td>
   </tr>
   </center>
 </table>
