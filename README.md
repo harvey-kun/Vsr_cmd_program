@@ -54,7 +54,7 @@
 <table style="width:100%">
   <tr>
     <td>Customer Choice:</td>
-    <td>Owner CLI::</td>
+    <td>Owner CLI:</td>
   </tr>
   <tr>
     <td><img src="Screenshot/3.png"></td>
