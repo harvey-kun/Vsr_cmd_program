@@ -38,7 +38,8 @@
  - Input validation to prevent infinite loops and crashes.
 
 
-## Demo
+## Demo 
+![](Screenshot/1.png)
 
 
 # Note
