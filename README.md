@@ -39,7 +39,8 @@
 
 
 # Demo 
-Main CLI
+
+<p>Main CLI</p>
 <img src="Screenshot/1.png" alt="Nothing" width="35%" length="35%">
 
 Customer CLI
