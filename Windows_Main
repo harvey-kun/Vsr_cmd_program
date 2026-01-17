@@ -240,7 +240,7 @@ void manageReservation(int dateIndex) {
             customerNames[dateIndex] = "";
             vehicleTypes[dateIndex] = "";
             problems[dateIndex] = "";
-            isBusy[dateIndex] = false;
+            for(int i = dateIndex; i < 7; i++) isBusy[i] = false;
             cout << "Reservation marked as completed.\n";
             cout << "Press enter to continue...";
             clearInput();
