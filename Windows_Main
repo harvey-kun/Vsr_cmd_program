@@ -5,9 +5,9 @@ using namespace std;
 
 //For "GLOBAL VARIABLES and ARRAYS"
     //Arrays
-string ownerCreds[2] = {"admin", "admin"};
-string dates[7] = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
-bool isBusy[7] = {false,false,false,false,false,false,false};
+string ownerCreds[2] = {"admin", "admin"};                                                         // Owner login credentials
+string dates[7] = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};        // Days of the week
+bool isBusy[7] = {false,false,false,false,false,false,false};                                      // Tracks if a day is already reserved
 
     // Customer info arrays (one per date)
 string customerNames[7] = {"","","","","","",""};
@@ -16,11 +16,11 @@ string problems[7] = {"","","","","","",""};
 
     // Vehicle categories and types
 string categories[3] = {"Private / personal vehicles", "Public transport vehicles", "Commercial / heavy vehicles"};
-
 string privateVehicles[7] = {"Sedan", "Hatchback", "Pickup", "Van", "AUV", "MPV", "Motorcycle"};
 string publicVehicles[8] = {"Jeepney", "Modern Jeepney", "Tricycle", "E-Trike", "Taxi", "UV Express", "Shuttle Van", "Motorcycle"};
 string commercialVehicles[5] = {"Truck", "Delivery Van", "Bus", "Mini Bus", "Motorcycle"};
 
+    // Option in problems
 string problemList[7] = {"Go back", "You're not sure what's the problem", "Engine & Powertrain", "Safety & Control Systems", "Electrical & Electronic Systems", "Fluids, Cooling & Exhaust", "Body & Interior"};
 
     //Variables
@@ -37,19 +37,21 @@ void changeProblem(int dateIndex);
 void setWorkDuration(int dateIndex);
 void manageReservation(int dateIndex);
 void mainMenuUI();
-void ownerMenuUI();
+void ownerMenuUI();                                                // Displays the owner menu options
 void displayReservationSummary(int dateIndex);
 void selectProblem(int dateIndex);
 bool selectVehicleType(int categoryIndex, int dateIndex);
 void selectVehicleCategory(int dateIndex);
 void inputCustomerName(int dateIndex);
-void makeReservation();
-void customerMenuUI();
-bool ownerLogin();
+void makeReservation();                                            
+void customerMenuUI();                                           // Displays the customer menu options             
+bool ownerLogin();                                               // check usrnnme and pswrd 
 void ownerMenu();
 void customerMenu();
 void changeCredentials();
 
+
+//Show main menu thing
 int main() {
     int choice = 0;
 
