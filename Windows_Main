@@ -54,7 +54,7 @@ int main() {
     int choice = 0;
 
     while (choice != 3){
-        system("clear");
+        system("cls");
         header("VEHICLE SERVICE RESERVATION SYSTEM");
         mainMenuUI();
 
@@ -75,7 +75,7 @@ int main() {
             }
         }
         else if (choice == 3){
-            system("clear");
+            system("cls");
             header("VEHICLE SERVICE RESERVATION SYSTEM");
             cout << "Ending Program...\n";
         }
