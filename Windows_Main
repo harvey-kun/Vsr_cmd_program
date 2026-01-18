@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <stdlib.h>
 using namespace std;
 
 //For "GLOBAL VARIABLES and ARRAYS"
@@ -55,7 +54,7 @@ int main() {
     int choice = 0;
 
     while (choice != 3){
-        system("cls");
+        system("CLS");
         header("VEHICLE SERVICE RESERVATION SYSTEM");
         mainMenuUI();
 
@@ -76,7 +75,7 @@ int main() {
             }
         }
         else if (choice == 3){
-            system("cls");
+            system("CLS");
             header("VEHICLE SERVICE RESERVATION SYSTEM");
             cout << "Ending Program...\n";
         }
@@ -164,7 +163,7 @@ void changeProblem(int dateIndex) {
     bool selected = false;
 
     while (!selected) {
-        system("cls");
+        system("CLS");
         header("CHANGE PROBLEM");
         displayReservationDetails(dateIndex);
         cout << endl;
@@ -176,10 +175,10 @@ void changeProblem(int dateIndex) {
         cout << "\nEnter choice: ";
         if (!(cin >> choice)) {
             clearInput();
-            system("cls");
+            system("CLS");
             cout << "Invalid input.\n";
         } else if (choice < 1 || choice > 6) {
-            system("cls");
+            system("CLS");
             cout << "Invalid choice.\n";
         } else {
             problems[dateIndex] = problemList[choice];
@@ -198,7 +197,7 @@ void setWorkDuration(int dateIndex) {
         cout << "Enter the number of work days: ";
         if (!(cin >> days) || days < 1) {
             clearInput();
-            system("cls");
+            system("CLS");
             cout << "Invalid input. Please enter a positive number.\n";
         }
     }
@@ -214,7 +213,7 @@ void setWorkDuration(int dateIndex) {
 void manageReservation(int dateIndex) {
     int choice = 0;
     while (choice != 1) {
-        system("cls");
+        system("CLS");
         header("MANAGE RESERVATION");
         displayReservationDetails(dateIndex);
         cout << endl;
@@ -247,7 +246,7 @@ void manageReservation(int dateIndex) {
         } else if (choice == 4 && !customerNames[dateIndex].empty() && !vehicleTypes[dateIndex].empty() && !problems[dateIndex].empty()) {
             setWorkDuration(dateIndex);
         } else {
-            system("cls");
+            system("CLS");
             cout << "Invalid choice.\n";
         }
     }
@@ -276,7 +275,7 @@ void selectProblem(int dateIndex) {
     bool selected = false;
 
     while (!selected) {
-        system("cls");
+        system("CLS");
         header("SELECT PROBLEM");
         displayReservationSummary(dateIndex);
         cout << endl;
@@ -288,10 +287,10 @@ void selectProblem(int dateIndex) {
         cout << "\nEnter choice: ";
         if (!(cin >> choice)) {
             clearInput();
-            system("cls");
+            system("CLS");
             cout << "Invalid input.\n";
         } else if (choice < 1 || choice > 7) {
-            system("cls");
+            system("CLS");
             cout << "Invalid choice.\n";
         } else if (choice == 1) {
             // Go back to vehicle selection
@@ -308,7 +307,7 @@ bool selectVehicleType(int categoryIndex, int dateIndex) {
     bool selected = false;
 
     while (!selected) {
-        system("cls");
+        system("CLS");
         header("SELECT VEHICLE TYPE");
         displayReservationSummary(dateIndex);
         cout << endl;
@@ -331,10 +330,10 @@ bool selectVehicleType(int categoryIndex, int dateIndex) {
         cout << "\nEnter choice: ";
         if (!(cin >> choice)) {
             clearInput();
-            system("cls");
+            system("CLS");
             cout << "Invalid input.\n";
         } else if (choice < 1 || (categoryIndex == 0 && choice > 8) || (categoryIndex == 1 && choice > 9) || (categoryIndex == 2 && choice > 6)) {
-            system("cls");
+            system("CLS");
             cout << "Invalid choice.\n";
         } else if (choice == 1) {
             // Go back to category selection
@@ -360,7 +359,7 @@ void selectVehicleCategory(int dateIndex) {
     bool selected = false;
 
     while (!selected) {
-        system("cls");
+        system("CLS");
         header("SELECT VEHICLE CATEGORY");
         displayReservationSummary(dateIndex);
         cout << endl;
@@ -373,10 +372,10 @@ void selectVehicleCategory(int dateIndex) {
         cout << "\nEnter choice: ";
         if (!(cin >> choice)) {
             clearInput();
-            system("cls");
+            system("CLS");
             cout << "Invalid input.\n";
         } else if (choice < 1 || choice > 4) {
-            system("cls");
+            system("CLS");
             cout << "Invalid choice.\n";
         } else if (choice == 1) {
             // Cancel reservation
@@ -394,7 +393,7 @@ void selectVehicleCategory(int dateIndex) {
 }
 
 void inputCustomerName(int dateIndex) {
-    system("cls");
+    system("CLS");
     header("CUSTOMER INFORMATION");
     cout << "Enter your full name: ";
     getline(cin, customerNames[dateIndex]);
@@ -414,7 +413,7 @@ void makeReservation() {
         }
     }
     if (allBusy) {
-        system("cls");
+        system("CLS");
         header("MAKE RESERVATION");
         displayDates();
         cout << "\nThe week schedule is full. Try again next week.\n";
@@ -425,7 +424,7 @@ void makeReservation() {
     }
 
     while (!reserved) {
-        system("cls");
+        system("CLS");
         header("MAKE RESERVATION");
         displayDates();
 
@@ -433,10 +432,10 @@ void makeReservation() {
         if (!(cin >> pick)) {
             clearInput();
         } else if (pick < 1 || pick > 7) {
-            system("cls");
+            system("CLS");
             cout << "Invalid choice.\n";
         } else if (isBusy[pick - 1]) {
-            system("cls");
+            system("CLS");
             header("MAKE RESERVATION");
             displayDates();
         } else {
@@ -457,7 +456,7 @@ void customerMenuUI() {
 bool ownerLogin() {
     string user, pass;
 
-    system("cls");
+    system("CLS");
     header("OWNER LOGIN");
 
     if (firstLogin){
@@ -488,7 +487,7 @@ void changeCredentials() {
     string newUser, newPass;
 
     while (choice != 1) {
-        system("cls");
+        system("CLS");
         header("CHANGE CREDENTIALS");
         cout << "Current Account:\n";
         cout << "Username: " << ownerCreds[0] << endl;
@@ -504,14 +503,14 @@ void changeCredentials() {
         } else if (choice == 1) {
             // Go back
         } else if (choice == 2) {
-            system("cls");
+            system("CLS");
             header("CHANGING ACCOUNT");
             cout << "Username: ";
             cin >> newUser;
             cout << "Password: ";
             cin >> newPass;
 
-            system("cls");
+            system("CLS");
             header("ACCOUNT VERIFICATION");
             cout << "Username: " << newUser << endl;
             cout << "Password: " << newPass << endl << endl;
@@ -545,7 +544,7 @@ void changeCredentials() {
                 cin.get();
             }
         } else {
-            system("cls");
+            system("CLS");
             cout << "Invalid choice.\n";
         }
     }
@@ -555,7 +554,7 @@ void ownerMenu() {
     int choice = 0;
 
     while (choice != 1) {
-        system("cls");
+        system("CLS");
         header("OWNER PANEL");
         ownerMenuUI();
 
@@ -584,7 +583,7 @@ void customerMenu() {
     int choice = 0;
 
     while (choice != 1) {
-        system("cls");
+        system("CLS");
         header("CUSTOMER PANEL");
         customerMenuUI();
 
