@@ -6,6 +6,7 @@ using namespace std;
 //For "GLOBAL VARIABLES and ARRAYS"
     //Arrays
 string ownerCreds[2] = {"admin", "admin"};
+int workDays[7] = {0,0,0,0,0,0,0};  // Tracks work duration per reservation (0 means no reservation)
 string dates[7] = {"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
 bool isBusy[7] = {false,false,false,false,false,false,false};
 
@@ -204,6 +205,7 @@ void setWorkDuration(int dateIndex) {
     for (int i = 0; i < days && dateIndex + i < 7; i++) {
         isBusy[dateIndex + i] = true;
     }
+    workDays[dateIndex] = days;  // Track the work duration for this reservation
     cout << "Work duration set. Next " << days << " days marked as busy.\n";
     cout << "Press enter to continue...";
     clearInput();
@@ -234,11 +236,15 @@ void manageReservation(int dateIndex) {
         } else if (choice == 2 && !customerNames[dateIndex].empty() && !vehicleTypes[dateIndex].empty() && !problems[dateIndex].empty()) {
             changeProblem(dateIndex);
         } else if (choice == 3 && !customerNames[dateIndex].empty() && !vehicleTypes[dateIndex].empty() && !problems[dateIndex].empty()) {
-            // Finish: Clear reservation
+            // Finish: Clear reservation and unset busy for the full work duration
+            int days = workDays[dateIndex];
+            for (int i = 0; i < days && dateIndex + i < 7; i++) {
+                isBusy[dateIndex + i] = false;
+            }
             customerNames[dateIndex] = "";
             vehicleTypes[dateIndex] = "";
             problems[dateIndex] = "";
-            isBusy[dateIndex] = false;
+            workDays[dateIndex] = 0;  // Reset work days
             cout << "Reservation marked as completed.\n";
             cout << "Press enter to continue...";
             clearInput();
@@ -251,7 +257,6 @@ void manageReservation(int dateIndex) {
         }
     }
 }
-
 void mainMenuUI() {
     cout << setw(26) <<"[1]  "<< "Customer\n";
     cout << setw(26) <<"[2]  "<< "Owner\n";
@@ -378,11 +383,15 @@ void selectVehicleCategory(int dateIndex) {
             system("clear");
             cout << "Invalid choice.\n";
         } else if (choice == 1) {
-            // Cancel reservation
+            // Cancel reservation: Clear the full work duration range
+            int days = workDays[dateIndex];
+            for (int i = 0; i < days && dateIndex + i < 7; i++) {
+                isBusy[dateIndex + i] = false;
+            }
             customerNames[dateIndex] = "";
             vehicleTypes[dateIndex] = "";
             problems[dateIndex] = "";
-            isBusy[dateIndex] = false;
+            workDays[dateIndex] = 0;  // Reset work days
             return;
         } else {
             if (selectVehicleType(choice - 2, dateIndex)) {
@@ -441,6 +450,7 @@ void makeReservation() {
         } else {
             // Reserve date
             isBusy[pick - 1] = true;
+            workDays[pick - 1] = 1;  // Initialize work days to 1 for new reservations
             clearInput();
             reserved = true;
             inputCustomerName(pick - 1);
